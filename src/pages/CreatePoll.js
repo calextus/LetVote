@@ -20,7 +20,7 @@ const CreatePoll = () => {
 
   // Handle poll creation
   const handleCreatePoll = () => {
-    navigate("/poll-page"); // Redirect to Poll Page
+    navigate("/Parties"); // Redirect to Poll Page
   };
 
   return (
