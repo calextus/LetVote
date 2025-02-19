@@ -10,14 +10,13 @@ import CreatePoll from "./pages/CreatePoll";
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/Home" element={<Home />} />
-        <Route path="/parties" element={<PartyList />} />
-        <Route path="/CreatePoll" element={<CreatePoll />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} /> {/* Default Page */}
+      <Route path="/parties" element={<PartyList />} /> {/* Party Page */}
+    </Routes>
+    <Footer />
+  </Router>
   );
 }
 

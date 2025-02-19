@@ -10,10 +10,7 @@ const Home = () => {
       <div className="home-content">
         <h1>Welcome to the LetVote System</h1>
         <p>Create polls and let people vote seamlessly.</p>
-        <button
-          className="create-poll-btn"
-          onClick={() => navigate("/CreatePoll")}
-        >
+        <button className="create-poll-btn" onClick={() => navigate("/CreatePoll")}>
           Create a Poll
         </button>
       </div>

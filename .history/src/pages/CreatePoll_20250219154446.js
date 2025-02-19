@@ -4,9 +4,7 @@ import "./CreatePoll.css"; // Import CSS file
 
 const CreatePoll = () => {
   const navigate = useNavigate();
-  const [candidates, setCandidates] = useState([
-    { name: "", address: "", image: null },
-  ]);
+  const [candidates, setCandidates] = useState([{ name: "", address: "", image: null }]);
 
   // Add new candidate field
   const addCandidate = () => {
@@ -37,28 +35,16 @@ const CreatePoll = () => {
             <button>Upload Background</button>
           </div>
 
-          <input
-            type="text"
-            placeholder="Enter name of party"
-            className="input-field"
-          />
+          <input type="text" placeholder="Enter name of party" className="input-field" />
 
-          <textarea
-            placeholder="Write..."
-            className="input-field textarea"
-          ></textarea>
+          <textarea placeholder="Write..." className="input-field textarea"></textarea>
 
           <div className="date-fields">
             <input type="date" className="input-field" />
             <input type="date" className="input-field" />
           </div>
 
-          <input
-            type="text"
-            value="35433tfg4..."
-            className="input-field disabled"
-            disabled
-          />
+          <input type="text" value="35433tfg4..." className="input-field disabled" disabled />
 
           <h3>Add Candidates:</h3>
           {candidates.map((candidate, index) => (
@@ -68,18 +54,14 @@ const CreatePoll = () => {
                 placeholder="Enter name"
                 className="input-field"
                 value={candidate.name}
-                onChange={(e) =>
-                  handleInputChange(index, "name", e.target.value)
-                }
+                onChange={(e) => handleInputChange(index, "name", e.target.value)}
               />
               <input
                 type="text"
                 placeholder="Enter address"
                 className="input-field"
                 value={candidate.address}
-                onChange={(e) =>
-                  handleInputChange(index, "address", e.target.value)
-                }
+                onChange={(e) => handleInputChange(index, "address", e.target.value)}
               />
               <button className="upload-btn">Add Image</button>
             </div>
