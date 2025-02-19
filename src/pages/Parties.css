@@ -1,0 +1,69 @@
+.party-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+  }
+  
+  .search-icon {
+    margin-left: -40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .party-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .party-card {
+    background: #0b2a42;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    max-width: 300px;
+    margin: auto;
+  }
+  
+  .party-card h3 {
+    font-size: 18px;
+    color: orange;
+  }
+  
+  .vote-btn {
+    background: orange;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .vote-btn:hover {
+    background: darkorange;
+  }
+  
+  .no-parties {
+    font-size: 16px;
+    color: gray;
+  }
+  

@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-       <div className="logo">YourLogo</div>
+       <div className="logo">LetVote</div>
       <ul className="nav-links">
         <li><Link to="/Home">Home</Link></li>
         <li><Link to="/Parties">Parties</Link></li> 

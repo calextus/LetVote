@@ -1,10 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Home.css"; // Import CSS file
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <h1>Welcome to the Voting Platform</h1>
-      <p>Click on "Parties" to view and vote.</p>
+    <div className="home-container">
+      <div className="home-content">
+        <h1>Welcome to the Polling System</h1>
+        <p>Create polls and let people vote seamlessly.</p>
+        <button className="create-poll-btn" onClick={() => navigate("/CreatePoll")}>
+          Create a Poll
+        </button>
+      </div>
     </div>
   );
 };
