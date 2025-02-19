@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -21,11 +22,10 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">LetVote</div>
+       <div className="logo">YourLogo</div>
       <ul className="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Community</a></li>
-        <li><a href="#">Parties</a></li>
+        <li><Link to="/Home">Home</Link></li>
+        <li><Link to="/Parties">Parties</Link></li> 
       </ul>
       <button className="wallet-btn" onClick={connectWallet}>
         {walletAddress ? walletAddress : "Connect Wallet"}

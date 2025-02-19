@@ -1,17 +1,21 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";  
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import PartyList from "./pages/Parties";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <header className="App-header">
-        <p>Welcome to LetVote - Decentralized Voting System</p>
-      </header>
-      <Footer />
-    </div>
+    <Router>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} /> {/* Default Page */}
+      <Route path="/parties" element={<PartyList />} /> {/* Party Page */}
+    </Routes>
+    <Footer />
+  </Router>
   );
 }
 

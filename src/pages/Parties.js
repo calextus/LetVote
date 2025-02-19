@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./PartyList.css";
+import "./Parties.css";
 
-const PartyList = () => {
+const Parties = () => {
   // Dummy party data (will be replaced with real data later)
   const [parties, setParties] = useState([]);
 
@@ -34,4 +34,4 @@ const PartyList = () => {
   );
 };
 
-export default PartyList;
+export default Parties;
