@@ -1,108 +1,56 @@
 import React, { useState } from "react";
+import "./CreatePoll.css";
 import { useNavigate } from "react-router-dom";
-import "./CreatePoll.css"; // Import CSS file
 
 const CreatePoll = () => {
   const navigate = useNavigate();
-  const [candidates, setCandidates] = useState([
-    { name: "", address: "", image: null },
-  ]);
+  const [candidates, setCandidates] = useState([{ name: "", address: "" }]);
 
-  // Add new candidate field
+  // Function to add a new candidate input field
   const addCandidate = () => {
-    setCandidates([...candidates, { name: "", address: "", image: null }]);
+    setCandidates([...candidates, { name: "", address: "" }]);
   };
 
-  // Handle input changes
-  const handleInputChange = (index, field, value) => {
-    const updatedCandidates = [...candidates];
-    updatedCandidates[index][field] = value;
-    setCandidates(updatedCandidates);
-  };
-
-  // Handle poll creation
+  // Function to handle form submission (for now, just navigates to the poll page)
   const handleCreatePoll = () => {
-    navigate("/Parties"); // Redirect to Poll Page
+    navigate("/Parties"); // Change "/poll" to the actual poll page route
   };
 
   return (
-    <div className="poll-container">
-      <div className="poll-box">
-        {/* Left - Poll Form */}
-        <div className="poll-form">
-          <h2>Create a Poll</h2>
+    <div className="create-poll-container">
+      <div className="form-box">
+        <h2>Create a Poll</h2>
 
-          {/* Upload Background Image */}
-          <div className="upload-btn">
-            <button>Upload Background</button>
+        <label>Poll Name</label>
+        <input type="text" placeholder="Enter name of party" />
+
+        <label>About</label>
+        <textarea placeholder="Write about the poll..."></textarea>
+
+        <label>Start Date</label>
+        <input type="date" />
+
+        <label>End Date</label>
+        <input type="date" />
+
+        <label>Wallet Address</label>
+        <input type="text" placeholder="Enter wallet address" />
+
+        <h3>Add Candidates</h3>
+        {candidates.map((candidate, index) => (
+          <div key={index} className="candidate-box">
+            <input type="text" placeholder="Candidate Name" />
+            <input type="text" placeholder="Candidate Address" />
           </div>
+        ))}
 
-          <input
-            type="text"
-            placeholder="Enter name of party"
-            className="input-field"
-          />
+        <button className="add-btn" onClick={addCandidate}>
+          + Add Candidate
+        </button>
 
-          <textarea
-            placeholder="Write..."
-            className="input-field textarea"
-          ></textarea>
-
-          <div className="date-fields">
-            <input type="date" className="input-field" />
-            <input type="date" className="input-field" />
-          </div>
-
-          <input
-            type="text"
-            value="35433tfg4..."
-            className="input-field disabled"
-            disabled
-          />
-
-          <h3>Add Candidates:</h3>
-          {candidates.map((candidate, index) => (
-            <div key={index} className="candidate-box">
-              <input
-                type="text"
-                placeholder="Enter name"
-                className="input-field"
-                value={candidate.name}
-                onChange={(e) =>
-                  handleInputChange(index, "name", e.target.value)
-                }
-              />
-              <input
-                type="text"
-                placeholder="Enter address"
-                className="input-field"
-                value={candidate.address}
-                onChange={(e) =>
-                  handleInputChange(index, "address", e.target.value)
-                }
-              />
-              <button className="upload-btn">Add Image</button>
-            </div>
-          ))}
-
-          <button className="add-more-btn" onClick={addCandidate}>
-            + Add More Candidates
-          </button>
-
-          <button className="create-btn" onClick={handleCreatePoll}>
-            Create
-          </button>
-        </div>
-
-        {/* Right - Images */}
-        <div className="poll-images">
-          <img src="vote1.jpg" alt="vote" />
-          <img src="vote2.jpg" alt="vote" />
-          <img src="vote3.jpg" alt="vote" />
-          <img src="vote4.jpg" alt="vote" />
-          <img src="vote5.jpg" alt="vote" />
-          <img src="vote6.jpg" alt="vote" />
-        </div>
+        <button className="create-btn" onClick={handleCreatePoll}>
+          Create Poll
+        </button>
       </div>
     </div>
   );
